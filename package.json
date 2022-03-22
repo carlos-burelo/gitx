@@ -1,0 +1,17 @@
+{
+  "name": "gitx-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "ga": "bin/ga.js",
+    "gb": "bin/gb.js",
+    "gc": "bin/gc.js",
+    "gch": "bin/gch.js",
+    "gi": "bin/gi.js",
+    "gp": "bin/gp.js",
+    "gr": "bin/gr.js",
+    "gs": "bin/gs.js"
+  }
+}
