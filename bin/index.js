@@ -1,18 +1,20 @@
-import { exec } from 'child_process'
-
-export const ctx = () => {
-  const base = process.argv
-  const data = base.join(' ')
+const { exec } = require('child_process')
+const ctx = () => {
   const path = process.cwd()
+  const data = process.argv.slice(2).join(' ').trim()
   return {
     data,
     path,
   }
 }
 
-export const cmd = (cmd, path) =>
+const cmd = (cmd, path) =>
   exec(cmd, { cwd: path }, (err, stdout, stderr) => {
     if (err) return console.error(err)
     if (stderr) console.error(stderr)
     console.log(stdout)
   })
+module.exports = {
+  ctx,
+  cmd,
+}
