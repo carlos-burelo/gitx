@@ -1,20 +1,12 @@
-const { exec } = require('child_process')
-const ctx = () => {
-  const path = process.cwd()
-  const data = process.argv.slice(2).join(' ').trim()
-  return {
-    data,
-    path,
-  }
-}
+import { exec } from 'child_process'
 
-const cmd = (cmd, path) =>
-  exec(cmd, { cwd: path }, (err, stdout, stderr) => {
-    if (err) return console.error(err)
-    if (stderr) console.error(stderr)
-    console.log(stdout)
+export const ctx = process.argv.slice(2).join(' ').trim()
+
+export const run = cmd => {
+  const path = process.cwd()
+  return exec(cmd, { cwd: path }, (e, out, err) => {
+    if (e) console.error(e)
+    if (err) console.error(err.trim())
+    if (out) console.log(out.trim())
   })
-module.exports = {
-  ctx,
-  cmd,
 }

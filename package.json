@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "bin": {
     "ga": "bin/ga.js",
     "gb": "bin/gb.js",

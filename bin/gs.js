@@ -1,11 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
-const { ctx, cmd } = require('./index.js')
-
-function init() {
-  const { path } = ctx()
-  const base = `git status`
-  cmd(base, path)
-}
-init()
+import { run } from './index.js'
+;(() => {
+  const cmd = `git status`
+  run(cmd)
+})()
