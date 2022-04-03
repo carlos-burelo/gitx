@@ -9,6 +9,7 @@
     "gb": "bin/gb.js",
     "gc": "bin/gc.js",
     "gch": "bin/gch.js",
+    "gcl": "bin/gcl.js",
     "gi": "bin/gi.js",
     "gp": "bin/gp.js",
     "gr": "bin/gr.js",
